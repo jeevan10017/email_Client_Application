@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react'; 
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams, useNavigate } from 'react-router-dom';
 import { getEmailById, toggleEmailBookmark } from '../store/emailSlice';
@@ -24,9 +24,12 @@ const EmailDetail = () => {
   }, []);
 
   useEffect(() => {
-    NProgress.start();
-    dispatch(getEmailById(id));
-    NProgress.done();
+    const fetchEmail = async () => {
+      NProgress.start();
+      await dispatch(getEmailById(id));
+      NProgress.done();
+    };
+    fetchEmail();
   }, [dispatch, id]);
 
   const handleBookmarkToggle = async (e) => {
@@ -41,8 +44,6 @@ const EmailDetail = () => {
     NProgress.done();
   };
   
-  
-
   const handleBack = () => {
     navigate('/emails');
   };

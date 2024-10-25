@@ -57,23 +57,19 @@ const EmailList = () => {
     }
   }, [dispatch, emails.length, location.pathname]);
 
-  const handleEmailClick = (id) => {
+  const handleEmailClick = async (id) => {
     NProgress.start();
-    setTimeout(() => {
-      dispatch(setEmailAsRead(id));
-      setIsListVisible(false);
-      navigate(`/emails/${id}`);
-      NProgress.done();
-    }, 500);
+    await dispatch(setEmailAsRead(id));
+    setIsListVisible(false);
+    navigate(`/emails/${id}`);
+    NProgress.done();
   };
 
-  const handleBookmarkToggle = (id, e) => {
+  const handleBookmarkToggle = async (id, e) => {
+    e.stopPropagation();
     NProgress.start();
-    setTimeout(() => {
-      e.stopPropagation(); 
-      dispatch(toggleEmailBookmark(id));
-      NProgress.done();
-    }, 0);
+    await dispatch(toggleEmailBookmark(id));
+    NProgress.done();
   };
 
   const handleClearFilter = () => {
@@ -109,10 +105,10 @@ const EmailList = () => {
   const currentEmails = filteredEmails.slice(indexOfFirstEmail, indexOfLastEmail);
   const totalPages = Math.ceil(filteredEmails.length / emailsPerPage);
 
-  const handlePageChange = (pageNumber) => {
+  const handlePageChange = async (pageNumber) => {
     NProgress.start();
     setCurrentPage(pageNumber);
-    dispatch(getEmails(pageNumber));
+    await dispatch(getEmails(pageNumber));
     NProgress.done();
   };
 
