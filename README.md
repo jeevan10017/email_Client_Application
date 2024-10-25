@@ -4,10 +4,10 @@
   <table>
     <tr>
       <td>
-        <img src="/frontend/src/assets/Screenshot 2024-10-25 062020.png" alt="Light Mode" width="400" />
+        <img src="/frontend/src/assets/Screenshot 2024-10-25 062020.png" alt="Light Mode" width="500" />
       </td>
       <td>
-        <img src="/frontend/src/assets/emails-dark.png" alt="Dark Mode" width="400" />
+        <img src="/frontend/src/assets/emails-dark.png" alt="Dark Mode" width="500" />
       </td>
     </tr>
   </table>
