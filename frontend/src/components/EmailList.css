@@ -1,0 +1,370 @@
+.email-list-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 30%;
+  padding: 10px;
+  background-color: var(--background);
+  /* height: 100vh; */
+  font-family: Poppins, sans-serif;
+  position: relative;
+ overflow-y: auto;
+ position: static;
+ overflow-x: hidden;
+}
+
+.filter-bar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  /* height: 70px; */
+  flex-direction: row;
+  gap: 5px;
+  overflow-x: auto;
+  white-space: nowrap;
+  position: sticky;
+  background-color: var(--orange-main);
+  z-index: 1;
+}
+.filter-container{
+  padding-left: 5px;
+  background-color: var(--orange-background);
+  display: block;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.filter-bar::-webkit-scrollbar {
+  display: none; 
+}
+
+.filter-bar button {
+  padding: 10px 15px;
+  background-color: var(--orange-main);
+  border: none;
+  border-radius: 20px;
+  color: var(--orange-main);
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+
+.filter-bar button.active {
+  background-color: var(--orange-main); 
+  color: var(--orange-main); 
+}
+
+
+.filter-bar button:hover {
+  background-color: var(--orange-main); 
+  color: var(--orange-main); 
+}
+
+
+.filter-bar .clear-button {
+  background-color: var(--red-main);
+  color: #111; 
+}
+
+.filter-bar .clear-button:hover {
+  background-color: var(--red-hover);
+}
+
+
+.email-list {
+  padding-top: 5px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  
+  overflow-y: auto;
+  padding-bottom: 60px;
+}
+
+.email-list::-webkit-scrollbar {
+  display: none;
+}
+
+.email-item {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: var(--background);
+  box-shadow: 0px 1px 1px var(--orange-main);
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  border: 1px solid var(--orange-main);
+}
+
+.email-item.read {
+  background-color: var(--background);
+}
+
+.email-item.unread {
+  font-weight: bold;
+  background-color: var(--orangehover);
+
+}
+
+.email-item.unread:hover {
+  background-color: var(--orangehover);
+}
+
+.email-item:hover {
+  background-color: var(--orange-light);
+  transform: translateY(-2px);
+}
+
+.profile-photo1 {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--orange-main);
+  color:rgb(255, 255, 255);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 15px;
+}
+
+.align-profile {
+  display: flex;
+  justify-content:flex-start;
+  padding-right: 10px;
+}
+
+.email-content h3 {
+  margin: 0;
+  font-size: 1em;
+}
+
+.email-info {
+  font-size: 0.8em;
+  color: #999;
+}
+
+.date-info {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 0.8em;
+  color: #999;
+  margin-top: -30px;
+}
+
+.bookmark-icon.bookmarked {
+  color: var(--orange-main);
+}
+
+.bookmark-icon:hover {
+  color: var(--orange-main);
+}
+
+.pagination {
+  display: flex;
+  justify-content: flex-end;
+  position: sticky;
+  bottom: 0;
+  padding: 10px 0;
+  z-index: 1;
+  
+}
+
+.pagination button {
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin: 0 5px;
+  color: var(--text-color);
+  background-color: transparent;
+  transition: background-color 0.3s;
+}
+
+.pagination button.active {
+  color: var(--orange-main);
+}
+
+.pagination .arrow {
+  color: var(--orange-main);
+  font-size: 1.5em;
+}
+
+.toggle-list-button {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: none;
+  border: none;
+  font-size: 1.5em;
+  cursor: pointer;
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .email-list-container {
+    min-width: 96%;
+    position: relative;
+    /* max-width: 30%; */
+  }
+  .email-list {
+    padding: 5px;
+    margin: 2px;
+  }
+
+  .toggle-list-button {
+    display: block;
+  }
+
+  .email-list.hidden {
+    transform: translateX(-100%);  
+  }
+  
+  .filter-bar {
+    flex-direction: row;
+    padding: 10px;
+  }
+
+  .filter-bar button {
+    width: 100%;
+  } 
+
+}
+
+
+.email-item.unread {
+  font-weight: bold;
+  background-color: var(--orangehover);
+  color: var(--text-color);
+}
+
+.email-item:hover {
+  background-color: var(--orangehover);
+  color: var(--text-color);
+}
+
+.filter-bar {
+  display: flex;
+  align-items: center;
+  height: 70px;
+  gap: 5px;
+  overflow-x: auto;
+  background-color: var(--background);
+  padding: 10px 0;
+  white-space: nowrap;
+  overflow-y: hidden;
+}
+
+.filter-bar button {
+  padding: 10px 15px;
+  background-color: transparent;
+  border: none;
+  border-radius: 20px;
+  color: var(--text-color);
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.filter-bar button.active {
+  /* background-color: transparent; */
+  color: white;
+}
+
+.filter-bar .clear-button {
+  background-color: transparent;
+  color: var(--text-color);
+}
+
+.filter-bar button:hover,
+.filter-bar .clear-button:hover {
+  background-color: var(--orange-main);
+  color:white;
+}
+
+#nprogress .bar {
+  background: var(--orange-main) !important; 
+}
+#nprogress .spinner-icon {
+  border-top-color: transparent !important;
+  border-left-color: transparent !important;
+  
+}
+
+
+.pagination-and-search {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+  gap: 20px;
+  font-family: poppins;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+}
+
+.page-info {
+  margin: 0 10px;
+}
+
+.pagination .arrow {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5em;
+  color: var(--orange-main);
+}
+
+.search-bar-container {
+  flex-grow: 1;
+  display: flex;
+  justify-content: space-between;
+}
+
+.search-bar {
+  width: 100%;
+  max-width: 300px;
+  padding: 10px;
+  border: 1px solid var(--orange-main);
+  border-radius: 8px;
+  background-color: var(--background);
+  color: var(--text-color);
+  outline: none;
+}
+
+.search-bar::placeholder {
+  color: var(--text-muted);
+}
+
+
+
+.bookmark{
+  /* padding-left: 4px; */
+  display: flex;
+  justify-content: flex-end;
+  font-size: 1em;
+  color: #999;
+  margin-bottom: -20px;
+  position: relative;
+}
+
+.page-info{
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+.er{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  font-size: 1em;
+  color: #999;
+
+}

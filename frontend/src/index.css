@@ -1,0 +1,23 @@
+body {
+     font-family: "poppins";
+
+}
+.App {
+ max-height: 100vh;
+overflow-y: hidden;
+overflow-x: hidden;
+}
+
+
+@media (max-width: 768px) {
+  .email-list {
+    flex-direction: column;
+  }
+}
+@media (max-width: 768px) {
+  .email-item {
+    padding: 0.5rem;
+    font-size: 14px;
+    font-weight: lighter;
+  }
+}

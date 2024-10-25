@@ -1,0 +1,197 @@
+.email-detail-container {
+  padding: 20px;
+  background-color: var(--background);
+  max-width: 900px;
+  margin: 10px auto;
+  border-radius: 8px;
+  border: 1px solid var(--orange-main);
+  margin-bottom: 80px;
+  margin-top: 40px;
+
+}
+
+.email-detail-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid var(--orange-main);
+  padding-bottom: 8px;
+  margin-bottom: 4px;
+}
+
+.profile-photo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--orange-main);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5em;
+  margin-right: 20px;
+}
+
+
+.header-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+}
+
+h2 {
+  font-size: 1.2em;
+  margin: 0;
+  margin-bottom: -10px;
+  color: var(--text-color);
+}
+
+.email-info1 {
+  font-size: 0.9em;
+  margin-bottom: -10px;
+  color: var(--text-muted);
+}
+
+.bookmark-icon {
+  font-size: 1.5em;
+  color: rgb(183, 178, 178,0.5);
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.bookmark-icon.bookmarked {
+  color: var(--orange-main);
+}
+
+.email-detail-body {
+  padding: 10px;
+  font-size: 1.1em;
+  line-height: 1.6;
+  color: var(--text-color);
+  max-height: 78%; 
+  overflow-y: auto; 
+  padding-right: 10px; 
+  font-weight:lighter;
+}
+
+.email-detail-body::-webkit-scrollbar {
+  width: 0px;
+}
+
+.email-detail-body::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb);
+  border-radius: 10px;
+}
+
+.email-detail-body::-webkit-scrollbar-thumb:hover {
+  background-color: var(--scrollbar-thumb-hover);
+}
+
+
+@media (max-width: 768px) {
+
+  .profile-photo {
+    font-size: 1.2em;
+ margin-top: 10px;
+ margin-right: 10px;
+  }
+
+  .header-content {
+    margin-right: 20px;
+    font-size:small;
+  }
+
+  .email-detail-container {
+    width: 80%;
+    /* margin: 0 auto; */
+    padding: 10px;
+    margin-top: 10px;
+    overflow: hidden;
+    max-height: fit-content;
+  }
+
+  .email-detail-header {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .profile-photo {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .bookmark-icon {
+    font-size: 1.5em;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+  
+  .bookmark-icon.bookmarked {
+    color: var(--orange-main);
+  }
+  
+  .bookmark-icon:not(.bookmarked) {
+    color: #ddd;
+  }
+  
+  .bookmark-icon:hover {
+    color: var(--orange-main);
+  }
+  
+ 
+
+  .email-detail-body {
+    padding-top: 10px;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .email-item {
+    padding: 8px;
+  }
+
+  h2 {
+    font-size: 1.2em;
+  }
+
+  .profile-photo {
+    width: 30px;
+    height: 30px;
+  }
+
+  .email-detail-body {
+    font-size: 0.9em;
+    padding-right: 5px;
+  }
+
+  .filter-bar button {
+    font-size: 0.9em;
+  }
+}
+
+.back-button {
+  background: none;
+  border: none;
+  color: var(--orange-main);
+  font-size: 0.9em;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 5px;
+  margin-bottom: 20px;
+}
+
+.no-emails-found{
+  display: flex;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  font-size: 1.5em;
+  color: var(--text-muted);
+}
