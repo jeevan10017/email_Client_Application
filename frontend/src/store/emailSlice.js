@@ -1,9 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-const API_URL = process.env.EMAIL_API_URL;
-
-
+const API_URL = 'https://email-client-application.vercel.app/api/emails';
 
 // Fetch all emails
 export const getEmails = createAsyncThunk('emails/getEmails', async () => {
