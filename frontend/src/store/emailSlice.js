@@ -1,7 +1,9 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-const API_URL = 'http://localhost:5000/api/emails';
+const API_URL = process.env.EMAIL_API_URL;
+
+
 
 // Fetch all emails
 export const getEmails = createAsyncThunk('emails/getEmails', async () => {
